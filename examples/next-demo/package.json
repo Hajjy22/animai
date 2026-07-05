@@ -1,0 +1,16 @@
+{
+  "name": "animai-next-demo-target",
+  "private": true,
+  "scripts": {
+    "show:add": "node ../../dist/index.js add hero-orbital-rig --cwd . --dry-run",
+    "add:motion": "node ../../dist/index.js add hero-orbital-rig --cwd ."
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

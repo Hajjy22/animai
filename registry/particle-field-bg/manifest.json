@@ -1,0 +1,50 @@
+{
+  "template_id": "particle-field-bg",
+  "version": "1.0.0",
+  "tier": "pro",
+  "title": "Particle Field Background",
+  "summary": "An additive-blended particle field background with full geometry/material disposal on unmount.",
+  "framework": "nextjs-r3f",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "AnimAIParticleFieldBackground.tsx",
+  "loader_filename": "AnimAIParticleFieldBackgroundSlot.tsx",
+  "loader_export": "AnimAIParticleFieldBackgroundSlot",
+  "dependencies": [
+    "three",
+    "@react-three/fiber"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "three": ">=0.160.0",
+    "@react-three/fiber": ">=8.15.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/AnimAIParticleFieldBackground.tsx.",
+    "Write loader_code to app/components/AnimAIParticleFieldBackgroundSlot.tsx.",
+    "Import AnimAIParticleFieldBackgroundSlot into the route where the background should appear.",
+    "Render <AnimAIParticleFieldBackgroundSlot /> inside a relatively-positioned parent container.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/particle-field-bg",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-04T19:18:23.883Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "3d",
+    "particles",
+    "background",
+    "webgl",
+    "ambient",
+    "hero"
+  ]
+}

@@ -1,0 +1,31 @@
+# Animon Project - Agentic Engineering Specification
+
+## Project Identity
+You are building AnimAI, an MCP (Model Context Protocol) server and CLI tool that injects pre-vetted 3D/motion components into existing codebases using AST (Abstract Syntax Tree) manipulation. Do NOT generate mathematical 3D loops or GLSL shaders from scratch; always retrieve from the static template cache.
+
+## Tech Stack
+- Runtime: Node.js (TypeScript)
+- AST Engine: `@ast-grep/napi`
+- MCP SDK: `@modelcontextprotocol/sdk` (using `stdio` transport)
+- Output Targets: Next.js 14/15, React Three Fiber (R3F), GSAP, Tailwind CSS v4
+
+## 1. MCP Server Constraints
+- Use the `stdio` transport to act as a local subprocess for IDEs.
+- Keep tool definition schemas completely flat. Do not use deeply nested parameter objects, as this increases agent timeout latency [cite: 4].
+- Tool outputs must be deterministic JSON containing the dependency list, the integration instructions, and the target code.
+
+## 2. AST Manipulation Rules (CRITICAL)
+- NEVER use Regular Expressions (Regex) or string `.replace()` to modify user code. It is brittle and corrupts files.
+- ALWAYS use `@ast-grep/napi` with the "Find & Patch" methodology to safely traverse and inject imports, variables, and JSX nodes [cite: 5, 6].
+
+## 3. WebGL & React Three Fiber Constraints
+- **VRAM Memory Leaks:** R3F does not auto-dispose GPU resources [cite: 7]. Every generated 3D component MUST include a manual `useEffect` cleanup function that traverses the scene and calls `.dispose()` on all geometries, materials, and textures [cite: 8, 9].
+- **Canvas Sizing:** The `<Canvas>` wrapper must always be injected into a parent container with explicit CSS dimensions (e.g., `h-screen w-full relative`).
+- **Inline Assets:** For small 3D primitives (`.glb`), encode them as Base64 data URIs inline to avoid CORS blocking on local dev servers.
+
+## 4. Next.js 14/15 Constraints
+- **SSR Safety:** WebGL crashes Node.js servers [cite: 10]. Any file utilizing Three.js, R3F, or `window` APIs MUST have the `"use client"` directive at the top [cite: 11].
+- **Hydration:** When injecting heavy canvas elements into a layout, wrap the import with `next/dynamic` and set `{ ssr: false }` to prevent hydration mismatches [cite: 12].
+
+## 5. GSAP Constraints
+- **React 18 Strict Mode:** Never use standard `useEffect` for GSAP animations. You MUST use the `@gsap/react` library's `useGSAP()` hook to ensure timelines and ScrollTriggers are automatically reverted when the component unmounts [cite: 3, 13].

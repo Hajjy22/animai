@@ -1,0 +1,21 @@
+{
+  "name": "animai-worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:data": "node scripts/build-data.mjs",
+    "predev:node": "node scripts/build-data.mjs",
+    "dev:node": "node node-server.mjs",
+    "predeploy": "node scripts/build-data.mjs",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "dependencies": {
+    "hono": "^4.12.27"
+  },
+  "devDependencies": {
+    "@hono/node-server": "^1.19.14",
+    "wrangler": "^3.99.0"
+  }
+}

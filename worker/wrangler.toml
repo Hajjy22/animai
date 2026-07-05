@@ -1,0 +1,25 @@
+# AnimAI licensed registry Worker.
+#
+# Deploy:
+#   1. Create a KV namespace:  wrangler kv namespace create LICENSE_CACHE
+#      and paste the returned id below.
+#   2. Set secrets (never commit these):
+#        wrangler secret put POLAR_ORG_TOKEN     # Polar org access token (scope: license_keys:write)
+#   3. Set POLAR_ORG_ID below (not secret).
+#   4. npm run deploy
+#
+# Local testing (no Cloudflare / Polar needed):
+#   ANIMAI_TEST_KEYS=GOLD-KEY npm run dev:node
+
+name = "animai-registry"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+kv_namespaces = [
+  { binding = "LICENSE_CACHE", id = "REPLACE_WITH_KV_NAMESPACE_ID" }
+]
+
+[vars]
+POLAR_ORG_ID = ""
+# POLAR_BASE_URL defaults to https://api.polar.sh; set to the sandbox for testing.
+# POLAR_ORG_TOKEN is a secret — set it with `wrangler secret put POLAR_ORG_TOKEN`.

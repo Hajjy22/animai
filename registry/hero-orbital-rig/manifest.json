@@ -1,0 +1,55 @@
+{
+  "template_id": "hero-orbital-rig",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "R3F Orbital Hero",
+  "summary": "A dark-mode React Three Fiber hero with floating geometry and manual GPU cleanup.",
+  "framework": "nextjs-r3f",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "AnimAIMotionHero.tsx",
+  "loader_filename": "AnimAIMotionHeroSlot.tsx",
+  "loader_export": "AnimAIMotionHeroSlot",
+  "dependencies": [
+    "three",
+    "@react-three/fiber",
+    "@react-three/drei"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "three": ">=0.160.0",
+    "@react-three/fiber": ">=8.15.0",
+    "@react-three/drei": ">=9.96.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/AnimAIMotionHero.tsx.",
+    "Write loader_code to app/components/AnimAIMotionHeroSlot.tsx.",
+    "Import AnimAIMotionHeroSlot into app/page.tsx or the selected route.",
+    "Render <AnimAIMotionHeroSlot /> inside a parent route element such as <main>.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/hero-orbital-rig",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-04T19:18:23.875Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "3d",
+    "hero",
+    "r3f",
+    "dark mode",
+    "webgl",
+    "floating",
+    "orbital",
+    "saas",
+    "glow"
+  ]
+}

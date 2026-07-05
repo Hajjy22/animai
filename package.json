@@ -1,0 +1,53 @@
+{
+  "name": "animai",
+  "version": "0.1.0",
+  "description": "Vetted, leak-free, SSR-safe 3D & motion components for Next.js — installed by your AI agent via MCP or CLI with AST-safe injection.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "animai": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:registry": "node scripts/build-registry.mjs",
+    "build:cdn": "node scripts/build-cdn.mjs",
+    "build": "npm run build:registry && tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build",
+    "vet": "node scripts/vet.mjs",
+    "vet:check": "node scripts/vet.mjs --check",
+    "demo:add": "node dist/index.js add hero-orbital-rig --cwd ./examples/next-demo",
+    "demo:dry-run": "node dist/index.js add hero-orbital-rig --cwd ./examples/next-demo --dry-run",
+    "demo:search": "node dist/index.js search \"dark mode 3d hero\"",
+    "mcp": "node dist/index.js mcp",
+    "start": "node dist/index.js",
+    "typecheck": "npm run build:registry && tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "ast-grep",
+    "react-three-fiber",
+    "three",
+    "gsap",
+    "motion",
+    "nextjs",
+    "components",
+    "webgl"
+  ],
+  "author": "Ismail Hajjy",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "dependencies": {
+    "@ast-grep/napi": "^0.43.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "typescript": "^6.0.3"
+  }
+}
