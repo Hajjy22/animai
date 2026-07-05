@@ -1,0 +1,50 @@
+{
+  "template_id": "text-stagger-reveal",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "Text Stagger Reveal",
+  "summary": "A headline that reveals word-by-word with a GSAP stagger on mount.",
+  "framework": "nextjs-gsap",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "TextStaggerReveal.tsx",
+  "loader_filename": "TextStaggerRevealSlot.tsx",
+  "loader_export": "TextStaggerRevealSlot",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "gsap": ">=3.12.0",
+    "@gsap/react": ">=2.1.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/TextStaggerReveal.tsx.",
+    "Write loader_code to app/components/TextStaggerRevealSlot.tsx.",
+    "Import TextStaggerRevealSlot into the route where the component should appear.",
+    "Render <TextStaggerRevealSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/text-stagger-reveal",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-05T15:42:29.274Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "gsap",
+    "text",
+    "headline",
+    "stagger",
+    "reveal",
+    "motion"
+  ]
+}

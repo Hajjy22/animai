@@ -13,6 +13,7 @@
   "scripts": {
     "build:registry": "node scripts/build-registry.mjs",
     "build:cdn": "node scripts/build-cdn.mjs",
+    "new:component": "node scripts/new-component.mjs",
     "build": "npm run build:registry && tsc -p tsconfig.json",
     "prepublishOnly": "npm run build",
     "vet": "node scripts/vet.mjs",

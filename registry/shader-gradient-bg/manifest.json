@@ -1,0 +1,50 @@
+{
+  "template_id": "shader-gradient-bg",
+  "version": "1.0.0",
+  "tier": "pro",
+  "title": "Shader Gradient Background",
+  "summary": "A full-viewport animated gradient background driven by a custom GLSL shader.",
+  "framework": "nextjs-r3f",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "ShaderGradientBg.tsx",
+  "loader_filename": "ShaderGradientBgSlot.tsx",
+  "loader_export": "ShaderGradientBgSlot",
+  "dependencies": [
+    "three",
+    "@react-three/fiber"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "three": ">=0.160.0",
+    "@react-three/fiber": ">=8.15.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/ShaderGradientBg.tsx.",
+    "Write loader_code to app/components/ShaderGradientBgSlot.tsx.",
+    "Import ShaderGradientBgSlot into the route where the component should appear.",
+    "Render <ShaderGradientBgSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/shader-gradient-bg",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-05T15:42:29.273Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "shader",
+    "gradient",
+    "background",
+    "webgl",
+    "ambient",
+    "glsl"
+  ]
+}

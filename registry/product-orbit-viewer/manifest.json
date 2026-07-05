@@ -1,0 +1,50 @@
+{
+  "template_id": "product-orbit-viewer",
+  "version": "1.0.0",
+  "tier": "pro",
+  "title": "Product Orbit Viewer",
+  "summary": "A drag-to-rotate 3D product viewer with idle auto-rotation.",
+  "framework": "nextjs-r3f",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "ProductOrbitViewer.tsx",
+  "loader_filename": "ProductOrbitViewerSlot.tsx",
+  "loader_export": "ProductOrbitViewerSlot",
+  "dependencies": [
+    "three",
+    "@react-three/fiber"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "three": ">=0.160.0",
+    "@react-three/fiber": ">=8.15.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/ProductOrbitViewer.tsx.",
+    "Write loader_code to app/components/ProductOrbitViewerSlot.tsx.",
+    "Import ProductOrbitViewerSlot into the route where the component should appear.",
+    "Render <ProductOrbitViewerSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/product-orbit-viewer",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-05T15:42:29.271Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "3d",
+    "product",
+    "showcase",
+    "interactive",
+    "drag",
+    "webgl"
+  ]
+}
