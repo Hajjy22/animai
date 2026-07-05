@@ -17,6 +17,8 @@
     "prepublishOnly": "npm run build",
     "vet": "node scripts/vet.mjs",
     "vet:check": "node scripts/vet.mjs --check",
+    "pretest": "npm run build",
+    "test": "node --experimental-strip-types --test",
     "demo:add": "node dist/index.js add hero-orbital-rig --cwd ./examples/next-demo",
     "demo:dry-run": "node dist/index.js add hero-orbital-rig --cwd ./examples/next-demo --dry-run",
     "demo:search": "node dist/index.js search \"dark mode 3d hero\"",

@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  cli:
+    name: CLI (build, vet, test, typecheck, pack)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Vetting harness (CI gate — fails on any critical check)
+        run: npm run vet:check
+      - name: Test suite
+        run: npm test
+      - name: Typecheck
+        run: npm run typecheck
+      - name: npm pack must include dist/ (publish sanity check)
+        run: |
+          npm pack --dry-run 2>&1 | tee /tmp/pack.log
+          grep -q "dist/index.js" /tmp/pack.log
+      - name: Demo dry-run against examples/next-demo
+        run: npm run demo:dry-run
+
+  web:
+    name: Web app build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run build
+
+  worker:
+    name: Worker data build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: worker
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: worker/package-lock.json
+      - run: npm ci
+      - run: npm run build:data
