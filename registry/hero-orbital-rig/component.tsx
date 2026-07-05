@@ -38,7 +38,7 @@ function CachedOrbitalRigScene() {
           return;
         }
 
-        for (const value of Object.values(material as Record<string, unknown>)) {
+        for (const value of Object.values(material as unknown as Record<string, unknown>)) {
           if (isTexture(value) && !disposedTextures.has(value)) {
             value.dispose();
             disposedTextures.add(value);

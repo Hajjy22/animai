@@ -73,7 +73,7 @@ function WireframeGlobeScene() {
         if (disposedMaterials.has(mat)) {
           return;
         }
-        for (const value of Object.values(mat as Record<string, unknown>)) {
+        for (const value of Object.values(mat as unknown as Record<string, unknown>)) {
           if (isTexture(value) && !disposedTextures.has(value)) {
             value.dispose();
             disposedTextures.add(value);
