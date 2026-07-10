@@ -1,9 +1,9 @@
 {
   "template_id": "particle-field-bg",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tier": "pro",
   "title": "Particle Field Background",
-  "summary": "An additive-blended particle field background with full geometry/material disposal on unmount.",
+  "summary": "A curl-noise particle drift with soft circular sprites, depth fade, and pointer repulsion — full geometry/material disposal on unmount.",
   "framework": "nextjs-r3f",
   "framework_targets": [
     "nextjs-app-router"
@@ -36,7 +36,7 @@
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-10T11:55:10.755Z",
+    "verified_at": "2026-07-10T12:04:57.293Z",
     "harness_version": "0.1.0"
   },
   "tags": [
@@ -45,6 +45,8 @@
     "background",
     "webgl",
     "ambient",
-    "hero"
+    "hero",
+    "curl-noise",
+    "interactive"
   ]
 }
