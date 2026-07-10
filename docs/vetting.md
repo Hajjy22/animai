@@ -54,3 +54,23 @@ in `measured_fps`. Planned shape:
   3. measures frame time via `requestAnimationFrame` to produce `measured_fps`.
 
 When Tier 2 runs alongside Tier 1, the report method becomes `static+runtime`.
+
+## Known GPU-compatibility risk: avoid `MeshTransmissionMaterial` + `Environment`
+
+While building the v2 flagship components (Phase A), drei's
+`MeshTransmissionMaterial` combined with `<Environment>` reliably triggered
+`THREE.WebGLRenderer: Context Lost` in a constrained/software-rendered GPU
+sandbox — reduced `resolution`/`samples` did not fix it, only removing the
+combination did. `MeshTransmissionMaterial`'s render-to-texture technique is
+one of the heaviest in the R3F/drei ecosystem and is known in the community to
+be driver-sensitive.
+
+Given AnimAI's core promise is "performance-budgeted and safe," **do not use
+`MeshTransmissionMaterial` (with or without `Environment`) in any component**
+until Tier 2 gives us an automated way to catch this class of failure across a
+range of GPU backends. Prefer emissive `MeshStandardMaterial` + `Bloom`
+(`@react-three/postprocessing`) for a premium "glowing" look — verified stable
+and visually strong (see `registry/hero-orbital-rig`). If a future component
+genuinely needs transmission/glass, test it manually across several
+GPU/driver combinations (including software rendering) before shipping it,
+and note the result here.
