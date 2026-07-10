@@ -1,9 +1,9 @@
 {
   "template_id": "shader-gradient-bg",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "tier": "pro",
-  "title": "Shader Gradient Background",
-  "summary": "A full-viewport animated gradient background driven by a custom GLSL shader.",
+  "title": "Aurora Gradient Background",
+  "summary": "A flowing, domain-warped fbm aurora background with a configurable 4-color gradient, driven by a custom GLSL shader.",
   "framework": "nextjs-r3f",
   "framework_targets": [
     "nextjs-app-router"
@@ -36,15 +36,17 @@
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-10T11:44:52.656Z",
+    "verified_at": "2026-07-10T11:55:10.763Z",
     "harness_version": "0.1.0"
   },
   "tags": [
     "shader",
     "gradient",
+    "aurora",
     "background",
     "webgl",
     "ambient",
-    "glsl"
+    "glsl",
+    "mesh-gradient"
   ]
 }
