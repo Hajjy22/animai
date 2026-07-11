@@ -2,6 +2,7 @@
   "template_id": "noise-grain-overlay",
   "version": "1.0.0",
   "tier": "free",
+  "category": "showcase",
   "title": "Noise Grain Overlay",
   "summary": "A subtle animated film-grain texture overlay via SVG filter, adds depth to flat sections.",
   "framework": "nextjs-css",
@@ -28,10 +29,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.058Z",
+    "verified_at": "2026-07-11T20:53:38.035Z",
     "harness_version": "0.1.0"
   },
   "tags": [

@@ -1,0 +1,46 @@
+{
+  "template_id": "design-tokens",
+  "version": "1.0.0",
+  "tier": "free",
+  "category": "design-system",
+  "title": "AnimAI Design Tokens",
+  "summary": "The shared design-token layer — color, radius, spacing, type, shadow, and motion as CSS variables. Drop <AnimAITheme /> once at your app root and every AnimAI component themes cohesively.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "AnimAITheme.tsx",
+  "loader_filename": "AnimAIThemeSlot.tsx",
+  "loader_export": "AnimAIThemeSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/AnimAITheme.tsx.",
+    "Write loader_code to app/components/AnimAIThemeSlot.tsx.",
+    "Render <AnimAIThemeSlot /> once at the top of app/layout.tsx (inside <body>).",
+    "Override any --ai-* custom property in your global CSS to retheme all AnimAI components at once.",
+    "No dependencies to install — this is pure CSS."
+  ],
+  "preview_url": "https://animai.dev/preview/design-tokens",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "n/a",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T20:53:38.024Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "design-system",
+    "tokens",
+    "theme",
+    "css-variables",
+    "foundation"
+  ]
+}

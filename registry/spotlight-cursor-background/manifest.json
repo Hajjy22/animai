@@ -2,6 +2,7 @@
   "template_id": "spotlight-cursor-background",
   "version": "1.0.0",
   "tier": "pro",
+  "category": "showcase",
   "title": "Spotlight Cursor Background",
   "summary": "A full-bleed section background with a soft spotlight mask that tracks the pointer.",
   "framework": "nextjs-gsap",
@@ -33,10 +34,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.075Z",
+    "verified_at": "2026-07-11T20:53:38.049Z",
     "harness_version": "0.1.0"
   },
   "tags": [

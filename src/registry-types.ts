@@ -1,5 +1,20 @@
 export type ComponentTier = "free" | "pro";
 
+/**
+ * Which shelf a component sits on. `showcase` = the marketing/landing flair
+ * (heroes, backgrounds, 3D). The rest are the everyday app-UI categories. Used
+ * for site filtering and the optional MCP search filter. Optional for backward
+ * compatibility with manifests authored before the field existed.
+ */
+export type ComponentCategory =
+  | "showcase"
+  | "forms"
+  | "overlays"
+  | "navigation"
+  | "feedback"
+  | "recipe"
+  | "design-system";
+
 export type DisposeAudit = "pass" | "fail" | "pending";
 
 /**
@@ -9,10 +24,14 @@ export type DisposeAudit = "pass" | "fail" | "pending";
  */
 export type VettingMethod = "static" | "runtime" | "static+runtime";
 
+/** Accessibility verdict for interactive UI components; "n/a" for showcase pieces. */
+export type A11yVerdict = "pass" | "fail" | "n/a";
+
 export type VettingReport = {
   dispose_audit: DisposeAudit;
   ssr_safe: boolean;
   vram_leak: boolean;
+  a11y?: A11yVerdict;
   fps_budget: number;
   measured_fps: number | null;
   method: VettingMethod;
@@ -29,6 +48,7 @@ export type ComponentManifest = {
   template_id: string;
   version: string;
   tier: ComponentTier;
+  category?: ComponentCategory;
   title: string;
   summary: string;
   framework: string;
@@ -74,6 +94,7 @@ export type MotionSearchResult = {
   summary: string;
   framework: string;
   tier: ComponentTier;
+  category?: ComponentCategory;
   tags: string[];
   add_command: string;
 };

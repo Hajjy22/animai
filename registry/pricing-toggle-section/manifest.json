@@ -2,6 +2,7 @@
   "template_id": "pricing-toggle-section",
   "version": "1.0.0",
   "tier": "pro",
+  "category": "showcase",
   "title": "Pricing Toggle Section",
   "summary": "A monthly/yearly pricing toggle with an animated price-change transition.",
   "framework": "nextjs-gsap",
@@ -33,10 +34,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.062Z",
+    "verified_at": "2026-07-11T20:53:38.038Z",
     "harness_version": "0.1.0"
   },
   "tags": [

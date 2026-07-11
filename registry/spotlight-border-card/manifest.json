@@ -2,6 +2,7 @@
   "template_id": "spotlight-border-card",
   "version": "1.0.0",
   "tier": "free",
+  "category": "showcase",
   "title": "Spotlight Border Card",
   "summary": "A card with an animated gradient-border spotlight that follows the cursor around its edge.",
   "framework": "nextjs-css",
@@ -28,10 +29,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.074Z",
+    "verified_at": "2026-07-11T20:53:38.049Z",
     "harness_version": "0.1.0"
   },
   "tags": [

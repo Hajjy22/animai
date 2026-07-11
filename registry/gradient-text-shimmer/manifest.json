@@ -2,6 +2,7 @@
   "template_id": "gradient-text-shimmer",
   "version": "1.0.0",
   "tier": "free",
+  "category": "showcase",
   "title": "Gradient Text Shimmer",
   "summary": "An animated gradient-fill headline with a shimmering sheen, pure CSS.",
   "framework": "nextjs-css",
@@ -28,10 +29,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.044Z",
+    "verified_at": "2026-07-11T20:53:38.025Z",
     "harness_version": "0.1.0"
   },
   "tags": [

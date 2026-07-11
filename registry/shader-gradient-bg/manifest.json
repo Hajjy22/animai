@@ -2,6 +2,7 @@
   "template_id": "shader-gradient-bg",
   "version": "2.0.0",
   "tier": "pro",
+  "category": "showcase",
   "title": "Aurora Gradient Background",
   "summary": "A flowing, domain-warped fbm aurora background with a configurable 4-color gradient, driven by a custom GLSL shader.",
   "framework": "nextjs-r3f",
@@ -33,10 +34,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.074Z",
+    "verified_at": "2026-07-11T20:53:38.048Z",
     "harness_version": "0.1.0"
   },
   "tags": [

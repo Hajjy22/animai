@@ -128,6 +128,7 @@ export function toIndexRecord(entry) {
     summary: entry.summary,
     framework: entry.framework,
     tier: entry.tier,
+    category: entry.category ?? "showcase",
     tags: entry.tags,
     add_command: `npx animai add ${entry.template_id}`,
   };

@@ -2,6 +2,7 @@
   "template_id": "typewriter-text",
   "version": "1.0.0",
   "tier": "free",
+  "category": "showcase",
   "title": "Typewriter Text",
   "summary": "A classic typing effect with a blinking cursor, pure CSS steps() animation.",
   "framework": "nextjs-css",
@@ -28,10 +29,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.081Z",
+    "verified_at": "2026-07-11T20:53:38.055Z",
     "harness_version": "0.1.0"
   },
   "tags": [

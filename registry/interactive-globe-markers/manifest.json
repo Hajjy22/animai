@@ -2,6 +2,7 @@
   "template_id": "interactive-globe-markers",
   "version": "1.0.0",
   "tier": "pro",
+  "category": "showcase",
   "title": "Interactive Globe with Markers",
   "summary": "A wireframe globe with data-point markers and animated arc connections, for global-reach sections.",
   "framework": "nextjs-r3f",
@@ -33,10 +34,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.054Z",
+    "verified_at": "2026-07-11T20:53:38.032Z",
     "harness_version": "0.1.0"
   },
   "tags": [

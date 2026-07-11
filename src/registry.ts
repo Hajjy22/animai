@@ -95,6 +95,7 @@ function toSearchResult(entry: RegistryEntry): MotionSearchResult {
     summary: entry.summary,
     framework: entry.framework,
     tier: entry.tier as ComponentTier,
+    category: entry.category,
     tags: [...entry.tags],
     add_command: `npx animai add ${entry.template_id}`,
   };

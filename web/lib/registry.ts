@@ -10,6 +10,7 @@ export type VettingReport = {
   dispose_audit: string;
   ssr_safe: boolean;
   vram_leak: boolean;
+  a11y?: "pass" | "fail" | "n/a";
   fps_budget: number;
   measured_fps: number | null;
   method: string;
@@ -17,12 +18,22 @@ export type VettingReport = {
   harness_version: string | null;
 };
 
+export type ComponentCategory =
+  | "showcase"
+  | "forms"
+  | "overlays"
+  | "navigation"
+  | "feedback"
+  | "recipe"
+  | "design-system";
+
 export type IndexRecord = {
   template_id: string;
   title: string;
   summary: string;
   framework: string;
   tier: "free" | "pro";
+  category: ComponentCategory;
   tags: string[];
   add_command: string;
 };
@@ -31,6 +42,7 @@ export type ComponentDetail = {
   template_id: string;
   version: string;
   tier: "free" | "pro";
+  category?: ComponentCategory;
   title: string;
   summary: string;
   framework: string;

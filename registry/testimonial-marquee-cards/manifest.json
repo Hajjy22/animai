@@ -2,6 +2,7 @@
   "template_id": "testimonial-marquee-cards",
   "version": "1.0.0",
   "tier": "free",
+  "category": "showcase",
   "title": "Testimonial Marquee Cards",
   "summary": "An auto-scrolling row of testimonial cards that pauses on hover, pure CSS.",
   "framework": "nextjs-css",
@@ -28,10 +29,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.078Z",
+    "verified_at": "2026-07-11T20:53:38.052Z",
     "harness_version": "0.1.0"
   },
   "tags": [

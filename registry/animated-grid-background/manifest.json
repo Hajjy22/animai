@@ -2,6 +2,7 @@
   "template_id": "animated-grid-background",
   "version": "1.0.0",
   "tier": "free",
+  "category": "showcase",
   "title": "Animated Grid Background",
   "summary": "A moving dot-grid background with a radial fade mask, pure CSS.",
   "framework": "nextjs-css",
@@ -28,10 +29,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.037Z",
+    "verified_at": "2026-07-11T20:53:38.018Z",
     "harness_version": "0.1.0"
   },
   "tags": [

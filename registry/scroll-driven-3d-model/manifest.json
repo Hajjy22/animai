@@ -2,6 +2,7 @@
   "template_id": "scroll-driven-3d-model",
   "version": "1.0.0",
   "tier": "pro",
+  "category": "showcase",
   "title": "Scroll-Driven 3D Model",
   "summary": "A 3D model whose rotation and position are tied to scroll progress, Apple-style product reveal.",
   "framework": "nextjs-r3f",
@@ -37,10 +38,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.072Z",
+    "verified_at": "2026-07-11T20:53:38.046Z",
     "harness_version": "0.1.0"
   },
   "tags": [

@@ -2,6 +2,7 @@
   "template_id": "rolling-number-counter",
   "version": "1.0.0",
   "tier": "pro",
+  "category": "showcase",
   "title": "Rolling Number Counter",
   "summary": "An odometer-style rolling digit counter for stat sections, GSAP-tweened per digit.",
   "framework": "nextjs-gsap",
@@ -33,10 +34,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.069Z",
+    "verified_at": "2026-07-11T20:53:38.044Z",
     "harness_version": "0.1.0"
   },
   "tags": [

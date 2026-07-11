@@ -202,7 +202,45 @@ export function ${pascal}Slot() {
 }
 `;
 
-function manifest({ id, pascal, kind, title, summary, tier, tags }) {
+// Interactive-UI archetype (css kind + a forms/overlays/navigation/feedback
+// category): a client component with a native focusable control, focus-visible
+// styling, token-driven motion, and a prefers-reduced-motion guard — so it
+// passes the accessibility tier out of the box. Replace the body with the real
+// component while keeping those affordances.
+const UI_COMPONENT = (pascal) => `"use client";
+
+import { useState } from "react";
+
+export default function ${pascal}() {
+  const [on, setOn] = useState(false);
+
+  return (
+    <section className="flex min-h-[20rem] w-full items-center justify-center bg-slate-950 p-8">
+      {/* TODO: replace with the real component (keep it keyboard-accessible). */}
+      <button
+        type="button"
+        onClick={() => setOn((value) => !value)}
+        aria-pressed={on}
+        className="${pascal.toLowerCase()}-control rounded-[var(--ai-radius,0.5rem)] bg-[var(--ai-primary,#0ea5e9)] px-4 py-2 font-medium text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--ai-ring,#38bdf8)]"
+      >
+        {on ? "On" : "Off"}
+      </button>
+      <style>{\`
+        .${pascal.toLowerCase()}-control {
+          transition: background-color var(--ai-duration, 200ms) var(--ai-ease, ease);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .${pascal.toLowerCase()}-control {
+            transition: none;
+          }
+        }
+      \`}</style>
+    </section>
+  );
+}
+`;
+
+function manifest({ id, pascal, kind, category, title, summary, tier, tags }) {
   const isWebgl = kind === "webgl";
   const isGsap = kind === "gsap";
   const framework = isWebgl ? "nextjs-r3f" : isGsap ? "nextjs-gsap" : "nextjs-css";
@@ -210,6 +248,7 @@ function manifest({ id, pascal, kind, title, summary, tier, tags }) {
     template_id: id,
     version: "1.0.0",
     tier,
+    category,
     title,
     summary,
     framework,
@@ -261,7 +300,9 @@ function manifest({ id, pascal, kind, title, summary, tier, tags }) {
 function main() {
   const { id, flags } = parseArgs(process.argv.slice(2));
   if (!id) {
-    fail("usage: node scripts/new-component.mjs <template-id> --kind webgl|gsap|css");
+    fail(
+      "usage: node scripts/new-component.mjs <template-id> --kind webgl|gsap|css [--category forms|overlays|navigation|feedback|recipe|showcase|design-system]",
+    );
   }
   if (!/^[a-z][a-z0-9-]*$/.test(id)) {
     fail(`template-id "${id}" must be kebab-case (lowercase letters, digits, hyphens).`);
@@ -271,6 +312,11 @@ function main() {
     fail('--kind must be "webgl", "gsap", or "css"');
   }
   const tier = flags.tier === "pro" ? "pro" : "free";
+  const CATEGORIES = ["showcase", "forms", "overlays", "navigation", "feedback", "recipe", "design-system"];
+  const category = typeof flags.category === "string" ? flags.category : "showcase";
+  if (!CATEGORIES.includes(category)) {
+    fail(`--category must be one of: ${CATEGORIES.join(", ")}`);
+  }
   const pascal = typeof flags.pascal === "string" ? flags.pascal : toPascalCase(id);
   const title = typeof flags.title === "string" ? flags.title : toTitleCase(id);
   const summary = typeof flags.summary === "string" ? flags.summary : "TODO: describe this component.";
@@ -282,8 +328,16 @@ function main() {
   }
   mkdirSync(dir, { recursive: true });
 
+  const UI_CATEGORIES = ["forms", "overlays", "navigation", "feedback", "recipe"];
+  const isUi = kind === "css" && UI_CATEGORIES.includes(category);
   const componentTemplate =
-    kind === "webgl" ? WEBGL_COMPONENT : kind === "gsap" ? GSAP_COMPONENT : CSS_COMPONENT;
+    kind === "webgl"
+      ? WEBGL_COMPONENT
+      : kind === "gsap"
+      ? GSAP_COMPONENT
+      : isUi
+      ? UI_COMPONENT
+      : CSS_COMPONENT;
   const loaderTemplate =
     kind === "webgl" ? WEBGL_LOADER : kind === "gsap" ? GSAP_LOADER : CSS_LOADER;
 
@@ -291,11 +345,11 @@ function main() {
   writeFileSync(path.join(dir, "loader.tsx"), loaderTemplate(pascal), "utf8");
   writeFileSync(
     path.join(dir, "manifest.json"),
-    `${JSON.stringify(manifest({ id, pascal, kind, title, summary, tier, tags }), null, 2)}\n`,
+    `${JSON.stringify(manifest({ id, pascal, kind, category, title, summary, tier, tags }), null, 2)}\n`,
     "utf8",
   );
 
-  console.error(`new-component: scaffolded registry/${id}/ (kind=${kind}, tier=${tier})`);
+  console.error(`new-component: scaffolded registry/${id}/ (kind=${kind}, tier=${tier}, category=${category})`);
   console.error(`Next: edit component.tsx, then run \`npm run vet\` and \`npm run build\`.`);
 }
 

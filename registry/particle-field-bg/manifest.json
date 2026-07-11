@@ -2,6 +2,7 @@
   "template_id": "particle-field-bg",
   "version": "2.0.0",
   "tier": "pro",
+  "category": "showcase",
   "title": "Particle Field Background",
   "summary": "A curl-noise particle drift with soft circular sprites, depth fade, and pointer repulsion — full geometry/material disposal on unmount.",
   "framework": "nextjs-r3f",
@@ -33,10 +34,11 @@
     "dispose_audit": "pass",
     "ssr_safe": true,
     "vram_leak": false,
+    "a11y": "n/a",
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-11T17:23:35.061Z",
+    "verified_at": "2026-07-11T20:53:38.037Z",
     "harness_version": "0.1.0"
   },
   "tags": [
