@@ -3,9 +3,21 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AnimAI — production-safe 3D & motion for AI agents",
+  title: {
+    default: "AnimAI — production-safe 3D & motion for AI agents",
+    template: "%s — AnimAI",
+  },
   description:
     "Vetted, memory-leak-free, SSR-safe React Three Fiber & GSAP components, delivered through a CLI and MCP server.",
+  metadataBase: new URL("https://animai.dev"),
+  openGraph: {
+    type: "website",
+    siteName: "AnimAI",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -21,6 +33,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex items-center gap-6 text-sm text-slate-300">
               <Link href="/" className="hover:text-white">
                 Components
+              </Link>
+              <Link href="/pricing" className="hover:text-white">
+                Pricing
               </Link>
               <Link href="/playground" className="hover:text-white">
                 Playground

@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import { CopyBlock } from "@/components/CopyBlock";
+
+export const metadata: Metadata = {
+  title: "Docs",
+  description:
+    "CLI commands, MCP server config, and Pro license setup for AnimAI components.",
+};
 
 const MCP_SNIPPET = `{
   "mcpServers": {
@@ -52,6 +59,12 @@ export default function DocsPage() {
           <CopyBlock label="Save your key" command="npx animai login your-license-key" />
           <CopyBlock label="Or via environment" command="export ANIMAI_LICENSE_KEY=your-license-key" />
         </div>
+        <p className="mt-4 text-sm text-slate-400">
+          Don&apos;t have a key yet?{" "}
+          <a href="/pricing" className="text-sky-400 hover:underline">
+            See pricing →
+          </a>
+        </p>
       </section>
     </div>
   );

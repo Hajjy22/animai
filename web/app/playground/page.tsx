@@ -1,7 +1,8 @@
+import type { Metadata } from "next";
 import { McpPlayground } from "@/components/McpPlayground";
 
-export const metadata = {
-  title: "MCP Playground — AnimAI",
+export const metadata: Metadata = {
+  title: "MCP Playground",
   description: "Run the AnimAI MCP tools live, exactly as an AI coding agent would.",
 };
 
