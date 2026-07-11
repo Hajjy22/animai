@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   },
   description:
     "Vetted, memory-leak-free, SSR-safe React Three Fiber & GSAP components, delivered through a CLI and MCP server.",
-  metadataBase: new URL("https://animai.dev"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://animai.dev"),
   openGraph: {
     type: "website",
     siteName: "AnimAI",
