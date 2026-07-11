@@ -4,7 +4,7 @@
 // archetype you pick. Fill in the scene/markup, then re-run `npm run vet`.
 //
 // Usage:
-//   node scripts/new-component.mjs <template-id> --kind webgl|gsap [options]
+//   node scripts/new-component.mjs <template-id> --kind webgl|gsap|css [options]
 //
 // Options:
 //   --title "..."       (default: derived from id)
@@ -181,20 +181,43 @@ export function ${pascal}Slot() {
 }
 `;
 
+// CSS archetype: no useEffect/GSAP/Three — pure Tailwind + inline keyframes.
+// No GPU resources and no client-only APIs, so it needs neither a dispose
+// cleanup nor an SSR gate; the loader is a plain passthrough (still required
+// because read-registry.mjs expects both files for every component).
+const CSS_COMPONENT = (pascal) => `export default function ${pascal}() {
+  return (
+    <section className="relative w-full overflow-hidden bg-slate-950 px-6 py-24 text-white">
+      {/* TODO: replace with the real markup + <style> keyframes. */}
+      <h2 className="text-4xl font-semibold">Replace this content.</h2>
+    </section>
+  );
+}
+`;
+
+const CSS_LOADER = (pascal) => `import ${pascal} from "./${pascal}";
+
+export function ${pascal}Slot() {
+  return <${pascal} />;
+}
+`;
+
 function manifest({ id, pascal, kind, title, summary, tier, tags }) {
   const isWebgl = kind === "webgl";
+  const isGsap = kind === "gsap";
+  const framework = isWebgl ? "nextjs-r3f" : isGsap ? "nextjs-gsap" : "nextjs-css";
   return {
     template_id: id,
     version: "1.0.0",
     tier,
     title,
     summary,
-    framework: isWebgl ? "nextjs-r3f" : "nextjs-gsap",
+    framework,
     framework_targets: ["nextjs-app-router"],
     component_filename: `${pascal}.tsx`,
     loader_filename: `${pascal}Slot.tsx`,
     loader_export: `${pascal}Slot`,
-    dependencies: isWebgl ? ["three", "@react-three/fiber"] : ["gsap", "@gsap/react"],
+    dependencies: isWebgl ? ["three", "@react-three/fiber"] : isGsap ? ["gsap", "@gsap/react"] : [],
     peer_dep_ranges: isWebgl
       ? {
           react: ">=18.2.0",
@@ -202,11 +225,16 @@ function manifest({ id, pascal, kind, title, summary, tier, tags }) {
           three: ">=0.160.0",
           "@react-three/fiber": ">=8.15.0",
         }
-      : {
+      : isGsap
+      ? {
           react: ">=18.2.0",
           next: ">=14.0.0",
           gsap: ">=3.12.0",
           "@gsap/react": ">=2.1.0",
+        }
+      : {
+          react: ">=18.2.0",
+          next: ">=14.0.0",
         },
     integration_instructions: [
       `Write the returned target_code to app/components/${pascal}.tsx.`,
@@ -233,14 +261,14 @@ function manifest({ id, pascal, kind, title, summary, tier, tags }) {
 function main() {
   const { id, flags } = parseArgs(process.argv.slice(2));
   if (!id) {
-    fail("usage: node scripts/new-component.mjs <template-id> --kind webgl|gsap");
+    fail("usage: node scripts/new-component.mjs <template-id> --kind webgl|gsap|css");
   }
   if (!/^[a-z][a-z0-9-]*$/.test(id)) {
     fail(`template-id "${id}" must be kebab-case (lowercase letters, digits, hyphens).`);
   }
   const kind = flags.kind;
-  if (kind !== "webgl" && kind !== "gsap") {
-    fail('--kind must be "webgl" or "gsap"');
+  if (kind !== "webgl" && kind !== "gsap" && kind !== "css") {
+    fail('--kind must be "webgl", "gsap", or "css"');
   }
   const tier = flags.tier === "pro" ? "pro" : "free";
   const pascal = typeof flags.pascal === "string" ? flags.pascal : toPascalCase(id);
@@ -254,16 +282,13 @@ function main() {
   }
   mkdirSync(dir, { recursive: true });
 
-  writeFileSync(
-    path.join(dir, "component.tsx"),
-    kind === "webgl" ? WEBGL_COMPONENT(pascal) : GSAP_COMPONENT(pascal),
-    "utf8",
-  );
-  writeFileSync(
-    path.join(dir, "loader.tsx"),
-    kind === "webgl" ? WEBGL_LOADER(pascal) : GSAP_LOADER(pascal),
-    "utf8",
-  );
+  const componentTemplate =
+    kind === "webgl" ? WEBGL_COMPONENT : kind === "gsap" ? GSAP_COMPONENT : CSS_COMPONENT;
+  const loaderTemplate =
+    kind === "webgl" ? WEBGL_LOADER : kind === "gsap" ? GSAP_LOADER : CSS_LOADER;
+
+  writeFileSync(path.join(dir, "component.tsx"), componentTemplate(pascal), "utf8");
+  writeFileSync(path.join(dir, "loader.tsx"), loaderTemplate(pascal), "utf8");
   writeFileSync(
     path.join(dir, "manifest.json"),
     `${JSON.stringify(manifest({ id, pascal, kind, title, summary, tier, tags }), null, 2)}\n`,

@@ -1,0 +1,44 @@
+{
+  "template_id": "marquee-text-loop",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "Marquee Text Loop",
+  "summary": "An infinite seamless scrolling text ticker that pauses on hover, pure CSS.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "MarqueeTextLoop.tsx",
+  "loader_filename": "MarqueeTextLoopSlot.tsx",
+  "loader_export": "MarqueeTextLoopSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/MarqueeTextLoop.tsx.",
+    "Write loader_code to app/components/MarqueeTextLoopSlot.tsx.",
+    "Import MarqueeTextLoopSlot into the route where the component should appear.",
+    "Render <MarqueeTextLoopSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/marquee-text-loop",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T15:35:20.212Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "text",
+    "marquee",
+    "ticker",
+    "loop",
+    "css"
+  ]
+}

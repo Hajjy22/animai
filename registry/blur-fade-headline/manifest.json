@@ -1,0 +1,50 @@
+{
+  "template_id": "blur-fade-headline",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "Blur Fade Headline",
+  "summary": "A blur-to-focus and fade scroll reveal for headlines, driven by ScrollTrigger.",
+  "framework": "nextjs-gsap",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "BlurFadeHeadline.tsx",
+  "loader_filename": "BlurFadeHeadlineSlot.tsx",
+  "loader_export": "BlurFadeHeadlineSlot",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "gsap": ">=3.12.0",
+    "@gsap/react": ">=2.1.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/BlurFadeHeadline.tsx.",
+    "Write loader_code to app/components/BlurFadeHeadlineSlot.tsx.",
+    "Import BlurFadeHeadlineSlot into the route where the component should appear.",
+    "Render <BlurFadeHeadlineSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/blur-fade-headline",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T15:35:20.203Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "text",
+    "blur",
+    "fade",
+    "scroll",
+    "reveal",
+    "gsap"
+  ]
+}

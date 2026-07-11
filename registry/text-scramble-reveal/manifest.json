@@ -1,0 +1,49 @@
+{
+  "template_id": "text-scramble-reveal",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "Text Scramble Reveal",
+  "summary": "Letters scramble through random characters before decoding into the real word.",
+  "framework": "nextjs-gsap",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "TextScrambleReveal.tsx",
+  "loader_filename": "TextScrambleRevealSlot.tsx",
+  "loader_export": "TextScrambleRevealSlot",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "gsap": ">=3.12.0",
+    "@gsap/react": ">=2.1.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/TextScrambleReveal.tsx.",
+    "Write loader_code to app/components/TextScrambleRevealSlot.tsx.",
+    "Import TextScrambleRevealSlot into the route where the component should appear.",
+    "Render <TextScrambleRevealSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/text-scramble-reveal",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T15:35:20.225Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "text",
+    "scramble",
+    "decode",
+    "reveal",
+    "gsap"
+  ]
+}

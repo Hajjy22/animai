@@ -1,0 +1,44 @@
+{
+  "template_id": "typewriter-text",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "Typewriter Text",
+  "summary": "A classic typing effect with a blinking cursor, pure CSS steps() animation.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "TypewriterText.tsx",
+  "loader_filename": "TypewriterTextSlot.tsx",
+  "loader_export": "TypewriterTextSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/TypewriterText.tsx.",
+    "Write loader_code to app/components/TypewriterTextSlot.tsx.",
+    "Import TypewriterTextSlot into the route where the component should appear.",
+    "Render <TypewriterTextSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/typewriter-text",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T15:35:20.228Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "text",
+    "typewriter",
+    "css",
+    "headline",
+    "animation"
+  ]
+}

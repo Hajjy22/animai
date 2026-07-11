@@ -1,0 +1,50 @@
+{
+  "template_id": "rolling-number-counter",
+  "version": "1.0.0",
+  "tier": "pro",
+  "title": "Rolling Number Counter",
+  "summary": "An odometer-style rolling digit counter for stat sections, GSAP-tweened per digit.",
+  "framework": "nextjs-gsap",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "RollingNumberCounter.tsx",
+  "loader_filename": "RollingNumberCounterSlot.tsx",
+  "loader_export": "RollingNumberCounterSlot",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "gsap": ">=3.12.0",
+    "@gsap/react": ">=2.1.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/RollingNumberCounter.tsx.",
+    "Write loader_code to app/components/RollingNumberCounterSlot.tsx.",
+    "Import RollingNumberCounterSlot into the route where the component should appear.",
+    "Render <RollingNumberCounterSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/rolling-number-counter",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T15:35:20.221Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "text",
+    "number",
+    "counter",
+    "odometer",
+    "stats",
+    "gsap"
+  ]
+}
