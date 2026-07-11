@@ -1,49 +1,37 @@
-import path from "node:path";
-import { Client } from "@modelcontextprotocol/sdk/client/index.js";
-import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+import { createRegistrySource } from "animai/registry-client";
+import { resolveLicenseKey, resolveRegistryUrl } from "animai/config";
+import { createMotionTools, type MotionTool } from "animai/mcp-tools";
 
-// The site is a live demo of the MCP server: this bridge spawns the real
-// `animai mcp` process over stdio and talks to it with the MCP SDK, exactly as
-// Cursor / Claude Code would. The connected client is cached on globalThis so a
-// single subprocess is reused across requests (and survives Next dev reloads).
+// The playground is a live demo of the MCP server. Rather than spawn a
+// subprocess (which cannot run in a serverless function), it calls the exact
+// same tool handlers in-process — identical output to `animai mcp` over stdio.
+// The tools are cached on globalThis so the registry source (and its disk
+// cache) is reused across requests and survives Next dev reloads.
 
-type McpGlobal = { client?: Promise<Client> };
+type McpGlobal = { tools?: MotionTool[] };
 const store = globalThis as unknown as { __animaiMcp?: McpGlobal };
 store.__animaiMcp ??= {};
 
-function cliEntry(): string {
-  // Next runs with cwd = web/, so the built CLI is one level up.
-  return path.resolve(process.cwd(), "..", "dist", "index.js");
-}
-
-async function getClient(): Promise<Client> {
+function getTools(): MotionTool[] {
   const cache = store.__animaiMcp as McpGlobal;
-  if (!cache.client) {
-    cache.client = (async () => {
-      const transport = new StdioClientTransport({
-        command: process.execPath,
-        args: [cliEntry(), "mcp"],
-      });
-      const client = new Client({ name: "animai-web-playground", version: "0.1.0" });
-      await client.connect(transport);
-      return client;
-    })().catch((error) => {
-      // Allow a later request to retry the spawn instead of caching the failure.
-      cache.client = undefined;
-      throw error;
+  if (!cache.tools) {
+    const source = createRegistrySource({
+      registryUrl: resolveRegistryUrl(),
+      licenseKey: resolveLicenseKey(),
     });
+    cache.tools = createMotionTools(source);
   }
-  return cache.client;
+  return cache.tools;
 }
 
 export async function listMcpTools() {
-  const client = await getClient();
-  const { tools } = await client.listTools();
-  return tools.map((tool) => ({ name: tool.name, description: tool.description ?? "" }));
+  return getTools().map((tool) => ({ name: tool.name, description: tool.description }));
 }
 
 export async function callMcpTool(name: string, args: Record<string, unknown>) {
-  const client = await getClient();
-  const result = await client.callTool({ name, arguments: args });
-  return result;
+  const tool = getTools().find((candidate) => candidate.name === name);
+  if (!tool) {
+    throw new Error(`Unknown tool "${name}".`);
+  }
+  return tool.handler(args);
 }

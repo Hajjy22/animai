@@ -7,6 +7,12 @@
   "bin": {
     "animai": "dist/index.js"
   },
+  "exports": {
+    ".": "./dist/index.js",
+    "./registry-client": "./dist/registry-client.js",
+    "./config": "./dist/config.js",
+    "./mcp-tools": "./dist/mcp-tools.js"
+  },
   "files": [
     "dist"
   ],

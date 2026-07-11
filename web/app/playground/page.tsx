@@ -14,11 +14,12 @@ export default function PlaygroundPage() {
       </p>
       <h1 className="mb-3 text-3xl font-semibold text-white">MCP Playground</h1>
       <p className="mb-8 text-slate-300">
-        This page calls the <span className="text-sky-300">real</span> AnimAI MCP
-        server — the site spawns <code className="text-sky-300">animai mcp</code>{" "}
-        over stdio and speaks the Model Context Protocol to it, exactly like
-        Cursor or Claude Code do. Pick a tool, run it, and see the structured
-        result your agent receives.
+        This page calls the <span className="text-sky-300">same</span> two MCP
+        tools — <code className="text-sky-300">search_motion_library</code> and{" "}
+        <code className="text-sky-300">fetch_motion_component</code> — that
+        power the <code className="text-sky-300">animai mcp</code> server your
+        agent connects to over stdio. Pick a tool, run it, and see the
+        structured result your agent receives.
       </p>
 
       <McpPlayground />
