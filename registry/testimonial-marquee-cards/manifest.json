@@ -1,0 +1,44 @@
+{
+  "template_id": "testimonial-marquee-cards",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "Testimonial Marquee Cards",
+  "summary": "An auto-scrolling row of testimonial cards that pauses on hover, pure CSS.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "TestimonialMarqueeCards.tsx",
+  "loader_filename": "TestimonialMarqueeCardsSlot.tsx",
+  "loader_export": "TestimonialMarqueeCardsSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/TestimonialMarqueeCards.tsx.",
+    "Write loader_code to app/components/TestimonialMarqueeCardsSlot.tsx.",
+    "Import TestimonialMarqueeCardsSlot into the route where the component should appear.",
+    "Render <TestimonialMarqueeCardsSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/testimonial-marquee-cards",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T16:55:20.523Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "testimonial",
+    "marquee",
+    "cards",
+    "social-proof",
+    "css"
+  ]
+}

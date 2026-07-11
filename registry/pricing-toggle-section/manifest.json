@@ -1,0 +1,49 @@
+{
+  "template_id": "pricing-toggle-section",
+  "version": "1.0.0",
+  "tier": "pro",
+  "title": "Pricing Toggle Section",
+  "summary": "A monthly/yearly pricing toggle with an animated price-change transition.",
+  "framework": "nextjs-gsap",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "PricingToggleSection.tsx",
+  "loader_filename": "PricingToggleSectionSlot.tsx",
+  "loader_export": "PricingToggleSectionSlot",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "gsap": ">=3.12.0",
+    "@gsap/react": ">=2.1.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/PricingToggleSection.tsx.",
+    "Write loader_code to app/components/PricingToggleSectionSlot.tsx.",
+    "Import PricingToggleSectionSlot into the route where the component should appear.",
+    "Render <PricingToggleSectionSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/pricing-toggle-section",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T16:55:20.511Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "pricing",
+    "toggle",
+    "saas",
+    "gsap",
+    "section"
+  ]
+}

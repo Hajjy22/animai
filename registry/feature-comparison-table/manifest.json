@@ -1,0 +1,49 @@
+{
+  "template_id": "feature-comparison-table",
+  "version": "1.0.0",
+  "tier": "pro",
+  "title": "Feature Comparison Table",
+  "summary": "An animated checkmark comparison table with a staggered reveal on scroll.",
+  "framework": "nextjs-gsap",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "FeatureComparisonTable.tsx",
+  "loader_filename": "FeatureComparisonTableSlot.tsx",
+  "loader_export": "FeatureComparisonTableSlot",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "gsap": ">=3.12.0",
+    "@gsap/react": ">=2.1.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/FeatureComparisonTable.tsx.",
+    "Write loader_code to app/components/FeatureComparisonTableSlot.tsx.",
+    "Import FeatureComparisonTableSlot into the route where the component should appear.",
+    "Render <FeatureComparisonTableSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/feature-comparison-table",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T16:55:20.499Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "comparison",
+    "table",
+    "pricing",
+    "features",
+    "gsap"
+  ]
+}

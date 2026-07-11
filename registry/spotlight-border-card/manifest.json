@@ -1,0 +1,45 @@
+{
+  "template_id": "spotlight-border-card",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "Spotlight Border Card",
+  "summary": "A card with an animated gradient-border spotlight that follows the cursor around its edge.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "SpotlightBorderCard.tsx",
+  "loader_filename": "SpotlightBorderCardSlot.tsx",
+  "loader_export": "SpotlightBorderCardSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/SpotlightBorderCard.tsx.",
+    "Write loader_code to app/components/SpotlightBorderCardSlot.tsx.",
+    "Import SpotlightBorderCardSlot into the route where the component should appear.",
+    "Render <SpotlightBorderCardSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/spotlight-border-card",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T16:55:20.518Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "card",
+    "border",
+    "spotlight",
+    "gradient",
+    "interactive",
+    "css"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "template_id": "tilt-card-3d",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "3D Tilt Card",
+  "summary": "A pointer-tracked 3D tilt card using CSS perspective transforms, no Three.js needed.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "TiltCard3d.tsx",
+  "loader_filename": "TiltCard3dSlot.tsx",
+  "loader_export": "TiltCard3dSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/TiltCard3d.tsx.",
+    "Write loader_code to app/components/TiltCard3dSlot.tsx.",
+    "Import TiltCard3dSlot into the route where the component should appear.",
+    "Render <TiltCard3dSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/tilt-card-3d",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T16:55:20.526Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "card",
+    "tilt",
+    "3d",
+    "interactive",
+    "css",
+    "hover"
+  ]
+}

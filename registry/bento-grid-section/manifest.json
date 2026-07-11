@@ -1,0 +1,45 @@
+{
+  "template_id": "bento-grid-section",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "Bento Grid Section",
+  "summary": "A bento-style feature grid with hover-reveal panels, pure CSS.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "BentoGridSection.tsx",
+  "loader_filename": "BentoGridSectionSlot.tsx",
+  "loader_export": "BentoGridSectionSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/BentoGridSection.tsx.",
+    "Write loader_code to app/components/BentoGridSectionSlot.tsx.",
+    "Import BentoGridSectionSlot into the route where the component should appear.",
+    "Render <BentoGridSectionSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/bento-grid-section",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T16:55:20.497Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "bento",
+    "grid",
+    "features",
+    "section",
+    "css",
+    "layout"
+  ]
+}
