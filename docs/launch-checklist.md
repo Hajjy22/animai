@@ -1,16 +1,29 @@
 # AnimAI Launch Checklist
 
+Status legend: [x] done · [ ] pending · [~] blocked on your account access
+
 ## Pre-launch
 
-- [ ] `npm run vet:check` — all 9 components pass
-- [ ] `npm test` — 43 tests green
-- [ ] `cd web && npm run build` — production build clean
-- [ ] Pricing page live at `/pricing`
+- [x] `npm run vet:check` — all 9 components pass
+- [x] `npm test` — 43 tests green
+- [x] `cd web && npm run build` — production build clean
+- [x] Pricing page live at `/pricing`
 - [ ] Waitlist form created (Tally) and linked from `/pricing` CTA
+      — replace the `tally.so/r/REPLACE_...` placeholder in web/app/pricing/page.tsx
 - [ ] OG image renders correctly (test with https://opengraph.xyz)
-- [ ] Favicon shows in browser tab
+- [x] Favicon shows in browser tab
+- [x] Public GitHub repo pushed + CI green — https://github.com/Hajjy22/animai
 
-## npm publish
+## Domain
+
+- [ ] Pick a domain — **`animai.dev` is taken** (checked 2026-07-11). Candidates:
+      `animai.pro`, `animai.studio`, `animai.design`, `animai.cc`, or `animaico.com`.
+      Until then, deploy on the free `*.vercel.app` subdomain and set
+      `NEXT_PUBLIC_SITE_URL` to it (drives OG/canonical URLs).
+
+## npm publish [~ needs your npm login]
+
+`npm pack --dry-run` is clean (48 files, dist-only, package name `animai`).
 
 ```bash
 npm login          # interactive — you must authenticate
@@ -18,7 +31,7 @@ npm publish        # prepublishOnly runs build + vet + test
 npx animai@latest  # verify the published CLI works
 ```
 
-## Cloudflare Worker deploy
+## Cloudflare Worker deploy [~ needs your Cloudflare account]
 
 ```bash
 cd worker
@@ -29,19 +42,26 @@ npm run deploy
 ```
 
 Skip Polar secrets for now — free launch only. Pro fetches return a locked
-stub with an upgrade message, which is correct behavior.
+stub with an upgrade message, which is correct behavior. After deploy, paste
+the Worker URL into `DEFAULT_REGISTRY_URL` in src/config.ts, then rebuild and
+republish (npm) so the CLI/MCP default to the live registry.
 
-## Site deploy (Vercel)
+## Site deploy (Vercel) [~ needs your Vercel account]
 
-```bash
-cd web
-vercel --prod
-# or link to GitHub and push — Vercel auto-deploys
-```
+The web app imports the `animai` package via `file:..` and its `prebuild`
+reads `../scripts` and `../registry`, so the build context must be the repo
+root. In the Vercel project settings:
 
-Known gotcha: the playground spawns `node ../dist/index.js`. Either:
-1. Add `animai` as a `file:..` dep + `outputFileTracingIncludes` in `next.config.mjs`, or
-2. Switch `web/lib/mcp.ts` to spawn `npx -y animai mcp` (works once npm published)
+- **Root Directory:** repository root (not `web/`)
+- **Framework Preset:** Next.js · **Output Directory:** `web/.next`
+- **Install Command:** `npm ci && npm --prefix web ci`
+- **Build Command:** `npm run build && npm --prefix web run build`
+- **Env:** `NEXT_PUBLIC_SITE_URL` = the deploy URL (drives OG/canonical URLs)
+
+The old "playground spawns a subprocess" gotcha is **resolved** — the
+playground now runs in-process (see src/mcp-tools.ts + web/lib/mcp.ts), and
+`outputFileTracingRoot` is set so the /api/mcp serverless bundle includes the
+linked package. This same root-first build order is already green in CI.
 
 ## MCP registry submissions
 
@@ -56,9 +76,10 @@ Submit to all directories to maximize AI-agent discovery:
 
 ## GitHub
 
-- [ ] Push to public GitHub repo
-- [ ] Write a clear README with: hero screenshot, `npx animai add` demo, MCP config snippet
-- [ ] Add topics: `mcp`, `react-three-fiber`, `gsap`, `motion`, `components`, `cli`
+- [x] Push to public GitHub repo — https://github.com/Hajjy22/animai (CI green)
+- [x] README with `npx animai add` demo + MCP config snippet
+- [x] Add discovery topics (mcp, model-context-protocol, react-three-fiber, threejs, gsap, motion, components, cli, nextjs, webgl)
+- [ ] Add a hero screenshot/GIF to the README (capture from the running site)
 
 ## Launch channels
 
