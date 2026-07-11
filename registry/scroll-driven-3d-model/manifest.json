@@ -1,0 +1,54 @@
+{
+  "template_id": "scroll-driven-3d-model",
+  "version": "1.0.0",
+  "tier": "pro",
+  "title": "Scroll-Driven 3D Model",
+  "summary": "A 3D model whose rotation and position are tied to scroll progress, Apple-style product reveal.",
+  "framework": "nextjs-r3f",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "ScrollDriven3dModel.tsx",
+  "loader_filename": "ScrollDriven3dModelSlot.tsx",
+  "loader_export": "ScrollDriven3dModelSlot",
+  "dependencies": [
+    "three",
+    "@react-three/fiber",
+    "gsap",
+    "@gsap/react"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "three": ">=0.160.0",
+    "@react-three/fiber": ">=8.15.0",
+    "gsap": ">=3.12.0",
+    "@gsap/react": ">=2.1.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/ScrollDriven3dModel.tsx.",
+    "Write loader_code to app/components/ScrollDriven3dModelSlot.tsx.",
+    "Import ScrollDriven3dModelSlot into the route where the component should appear.",
+    "Render <ScrollDriven3dModelSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/scroll-driven-3d-model",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T17:23:35.072Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "3d",
+    "scroll",
+    "scrolltrigger",
+    "product",
+    "webgl",
+    "reveal"
+  ]
+}

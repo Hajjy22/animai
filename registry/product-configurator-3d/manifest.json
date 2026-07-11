@@ -1,0 +1,50 @@
+{
+  "template_id": "product-configurator-3d",
+  "version": "1.0.0",
+  "tier": "pro",
+  "title": "3D Product Configurator",
+  "summary": "Swap color and material on a 3D model via UI controls, drag-to-rotate included.",
+  "framework": "nextjs-r3f",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "ProductConfigurator3d.tsx",
+  "loader_filename": "ProductConfigurator3dSlot.tsx",
+  "loader_export": "ProductConfigurator3dSlot",
+  "dependencies": [
+    "three",
+    "@react-three/fiber"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "three": ">=0.160.0",
+    "@react-three/fiber": ">=8.15.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/ProductConfigurator3d.tsx.",
+    "Write loader_code to app/components/ProductConfigurator3dSlot.tsx.",
+    "Import ProductConfigurator3dSlot into the route where the component should appear.",
+    "Render <ProductConfigurator3dSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/product-configurator-3d",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T17:23:35.064Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "3d",
+    "product",
+    "configurator",
+    "webgl",
+    "interactive",
+    "ecommerce"
+  ]
+}
