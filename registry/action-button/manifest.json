@@ -1,0 +1,46 @@
+{
+  "template_id": "action-button",
+  "version": "1.0.0",
+  "tier": "free",
+  "category": "forms",
+  "title": "Action Button",
+  "summary": "A button with primary, secondary, ghost, and destructive variants plus a loading state, token-themed and keyboard-accessible.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "ActionButton.tsx",
+  "loader_filename": "ActionButtonSlot.tsx",
+  "loader_export": "ActionButtonSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/ActionButton.tsx.",
+    "Write loader_code to app/components/ActionButtonSlot.tsx.",
+    "Import ActionButtonSlot into the route where the component should appear.",
+    "Render <ActionButtonSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/action-button",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T21:05:41.645Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "button",
+    "action",
+    "form",
+    "variants",
+    "loading"
+  ]
+}

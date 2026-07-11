@@ -1,0 +1,46 @@
+{
+  "template_id": "select-menu",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "forms",
+  "title": "Select Menu",
+  "summary": "An accessible custom select with keyboard navigation, animated open/close, and a checkmark on the active option.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "SelectMenu.tsx",
+  "loader_filename": "SelectMenuSlot.tsx",
+  "loader_export": "SelectMenuSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/SelectMenu.tsx.",
+    "Write loader_code to app/components/SelectMenuSlot.tsx.",
+    "Import SelectMenuSlot into the route where the component should appear.",
+    "Render <SelectMenuSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/select-menu",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T21:05:41.687Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "select",
+    "dropdown",
+    "form",
+    "menu",
+    "keyboard"
+  ]
+}

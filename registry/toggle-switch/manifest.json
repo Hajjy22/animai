@@ -1,0 +1,45 @@
+{
+  "template_id": "toggle-switch",
+  "version": "1.0.0",
+  "tier": "free",
+  "category": "forms",
+  "title": "Toggle Switch",
+  "summary": "An accessible on/off switch with a spring-eased knob and reduced-motion fallback.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "ToggleSwitch.tsx",
+  "loader_filename": "ToggleSwitchSlot.tsx",
+  "loader_export": "ToggleSwitchSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/ToggleSwitch.tsx.",
+    "Write loader_code to app/components/ToggleSwitchSlot.tsx.",
+    "Import ToggleSwitchSlot into the route where the component should appear.",
+    "Render <ToggleSwitchSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/toggle-switch",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T21:05:41.696Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "toggle",
+    "switch",
+    "form",
+    "boolean"
+  ]
+}

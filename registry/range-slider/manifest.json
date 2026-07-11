@@ -1,0 +1,45 @@
+{
+  "template_id": "range-slider",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "forms",
+  "title": "Range Slider",
+  "summary": "A themed range slider with a live value bubble and an accessible native input under the hood.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "RangeSlider.tsx",
+  "loader_filename": "RangeSliderSlot.tsx",
+  "loader_export": "RangeSliderSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/RangeSlider.tsx.",
+    "Write loader_code to app/components/RangeSliderSlot.tsx.",
+    "Import RangeSliderSlot into the route where the component should appear.",
+    "Render <RangeSliderSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/range-slider",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T21:05:41.683Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "slider",
+    "range",
+    "form",
+    "input"
+  ]
+}

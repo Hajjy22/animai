@@ -1,0 +1,46 @@
+{
+  "template_id": "text-field",
+  "version": "1.0.0",
+  "tier": "free",
+  "category": "forms",
+  "title": "Text Field",
+  "summary": "A labeled text input with helper text, error state, and optional leading icon — accessible by construction.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "TextField.tsx",
+  "loader_filename": "TextFieldSlot.tsx",
+  "loader_export": "TextFieldSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/TextField.tsx.",
+    "Write loader_code to app/components/TextFieldSlot.tsx.",
+    "Import TextFieldSlot into the route where the component should appear.",
+    "Render <TextFieldSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/text-field",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T21:05:41.693Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "input",
+    "text-field",
+    "form",
+    "validation",
+    "label"
+  ]
+}
