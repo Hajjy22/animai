@@ -1,0 +1,45 @@
+{
+  "template_id": "animated-grid-background",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "Animated Grid Background",
+  "summary": "A moving dot-grid background with a radial fade mask, pure CSS.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "AnimatedGridBackground.tsx",
+  "loader_filename": "AnimatedGridBackgroundSlot.tsx",
+  "loader_export": "AnimatedGridBackgroundSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/AnimatedGridBackground.tsx.",
+    "Write loader_code to app/components/AnimatedGridBackgroundSlot.tsx.",
+    "Import AnimatedGridBackgroundSlot into the route where the component should appear.",
+    "Render <AnimatedGridBackgroundSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/animated-grid-background",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T16:43:06.976Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "background",
+    "grid",
+    "dots",
+    "css",
+    "ambient",
+    "saas"
+  ]
+}

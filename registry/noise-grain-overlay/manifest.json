@@ -1,0 +1,45 @@
+{
+  "template_id": "noise-grain-overlay",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "Noise Grain Overlay",
+  "summary": "A subtle animated film-grain texture overlay via SVG filter, adds depth to flat sections.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "NoiseGrainOverlay.tsx",
+  "loader_filename": "NoiseGrainOverlaySlot.tsx",
+  "loader_export": "NoiseGrainOverlaySlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/NoiseGrainOverlay.tsx.",
+    "Write loader_code to app/components/NoiseGrainOverlaySlot.tsx.",
+    "Import NoiseGrainOverlaySlot into the route where the component should appear.",
+    "Render <NoiseGrainOverlaySlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/noise-grain-overlay",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T16:43:06.992Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "background",
+    "noise",
+    "grain",
+    "texture",
+    "css",
+    "overlay"
+  ]
+}

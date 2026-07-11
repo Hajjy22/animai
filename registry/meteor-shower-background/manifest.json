@@ -1,0 +1,45 @@
+{
+  "template_id": "meteor-shower-background",
+  "version": "1.0.0",
+  "tier": "free",
+  "title": "Meteor Shower Background",
+  "summary": "Falling shooting-star streaks at randomized angles and delays, pure CSS.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "MeteorShowerBackground.tsx",
+  "loader_filename": "MeteorShowerBackgroundSlot.tsx",
+  "loader_export": "MeteorShowerBackgroundSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/MeteorShowerBackground.tsx.",
+    "Write loader_code to app/components/MeteorShowerBackgroundSlot.tsx.",
+    "Import MeteorShowerBackgroundSlot into the route where the component should appear.",
+    "Render <MeteorShowerBackgroundSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/meteor-shower-background",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T16:43:06.991Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "background",
+    "meteors",
+    "stars",
+    "css",
+    "ambient",
+    "hero"
+  ]
+}

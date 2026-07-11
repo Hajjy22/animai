@@ -1,0 +1,51 @@
+{
+  "template_id": "starfield-parallax-bg",
+  "version": "1.0.0",
+  "tier": "pro",
+  "title": "Starfield Parallax Background",
+  "summary": "An instanced-point starfield with pointer and scroll parallax depth.",
+  "framework": "nextjs-r3f",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "StarfieldParallaxBg.tsx",
+  "loader_filename": "StarfieldParallaxBgSlot.tsx",
+  "loader_export": "StarfieldParallaxBgSlot",
+  "dependencies": [
+    "three",
+    "@react-three/fiber"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "three": ">=0.160.0",
+    "@react-three/fiber": ">=8.15.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/StarfieldParallaxBg.tsx.",
+    "Write loader_code to app/components/StarfieldParallaxBgSlot.tsx.",
+    "Import StarfieldParallaxBgSlot into the route where the component should appear.",
+    "Render <StarfieldParallaxBgSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/starfield-parallax-bg",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T16:43:07.005Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "3d",
+    "background",
+    "starfield",
+    "parallax",
+    "webgl",
+    "ambient",
+    "space"
+  ]
+}
