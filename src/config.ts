@@ -41,13 +41,23 @@ export function clearLicenseKey(): void {
 }
 
 /**
+ * The deployed Cloudflare Worker's public URL, filled in once Phase D2 (Worker
+ * deploy) has run. Left blank pre-deploy so `resolveRegistryUrl()` keeps
+ * returning undefined — i.e. offline, bundled-registry-only behavior — until
+ * this is set.
+ */
+const DEFAULT_REGISTRY_URL = "";
+
+/**
  * The registry base URL, if remote mode is enabled. Resolution order:
- * `--registry` flag → `ANIMAI_REGISTRY_URL` env → config file. When none is
- * set we return undefined, which means "use the bundled local registry only"
- * — so the CLI works fully offline with zero network calls by default.
+ * `--registry` flag → `ANIMAI_REGISTRY_URL` env → config file →
+ * `DEFAULT_REGISTRY_URL`. When none resolve to a non-empty value we return
+ * undefined, which means "use the bundled local registry only" — so the CLI
+ * works fully offline with zero network calls by default.
  */
 export function resolveRegistryUrl(flagUrl?: string): string | undefined {
-  const value = flagUrl ?? process.env.ANIMAI_REGISTRY_URL ?? loadConfig().registry_url;
+  const value =
+    flagUrl ?? process.env.ANIMAI_REGISTRY_URL ?? loadConfig().registry_url ?? DEFAULT_REGISTRY_URL;
   const trimmed = value?.trim();
   return trimmed ? trimmed.replace(/\/+$/, "") : undefined;
 }
