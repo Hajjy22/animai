@@ -1,13 +1,28 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getComponent, getComponentIds } from "@/lib/registry";
 import { TierBadge } from "@/components/TierBadge";
 import { VettingBadges } from "@/components/VettingBadges";
 import { CopyBlock } from "@/components/CopyBlock";
-import { FpsMeter } from "@/components/FpsMeter";
+import { LivePreviewPanel } from "@/components/LivePreviewPanel";
 
 export function generateStaticParams() {
   return getComponentIds().map((id) => ({ id }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const component = getComponent(id);
+  if (!component) return {};
+  return {
+    title: component.title,
+    description: component.summary,
+  };
 }
 
 export default async function ComponentPage({
@@ -38,6 +53,10 @@ export default async function ComponentPage({
       </div>
 
       <section className="mb-8">
+        <LivePreviewPanel id={id} />
+      </section>
+
+      <section className="mb-8">
         <h2 className="mb-3 text-sm font-medium uppercase tracking-wider text-slate-400">
           Vetting report
           <span className="ml-2 font-normal normal-case text-slate-500">
@@ -46,13 +65,6 @@ export default async function ComponentPage({
           </span>
         </h2>
         <VettingBadges report={component.vetting_report} />
-      </section>
-
-      <section className="mb-8">
-        <h2 className="mb-3 text-sm font-medium uppercase tracking-wider text-slate-400">
-          Live meter
-        </h2>
-        <FpsMeter />
       </section>
 
       <section className="mb-8 grid gap-3 sm:max-w-xl">
@@ -76,7 +88,7 @@ export default async function ComponentPage({
               MCP server.
             </p>
             <a
-              href="/docs#pro"
+              href="/pricing"
               className="mt-4 inline-block rounded-md bg-amber-400 px-4 py-2 text-sm font-medium text-slate-950 hover:bg-amber-300"
             >
               Get a license

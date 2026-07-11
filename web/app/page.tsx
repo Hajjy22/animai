@@ -1,35 +1,39 @@
 import Link from "next/link";
 import { getIndex } from "@/lib/registry";
 import { TierBadge } from "@/components/TierBadge";
+import { HomepageHeroLoader } from "@/components/HomepageHeroLoader";
 
 export default function BrowsePage() {
   const components = getIndex();
 
   return (
     <div>
-      <section className="mb-14">
-        <p className="mb-3 text-sm font-medium uppercase tracking-wider text-sky-400">
-          shadcn for 3D &amp; motion
-        </p>
-        <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-white sm:text-5xl">
-          Production-safe 3D &amp; motion components your AI agent can install.
-        </h1>
-        <p className="mt-5 max-w-2xl text-lg text-slate-300">
-          Every component is certified leak-free, SSR-safe, and
-          performance-budgeted by our vetting harness — then injected into your
-          Next.js app with AST-safe edits via the CLI or MCP server.
-        </p>
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          <div className="inline-flex items-center gap-3 rounded-lg border border-slate-800 bg-slate-900/60 px-4 py-3 font-mono text-sm text-slate-200">
-            <span className="text-slate-500">$</span>
-            npx animai add hero-orbital-rig
+      <section className="relative -mx-6 mb-14 overflow-hidden rounded-2xl bg-slate-950 px-6 py-16 sm:px-12 sm:py-20">
+        <HomepageHeroLoader />
+        <div className="relative z-10">
+          <p className="mb-3 text-sm font-medium uppercase tracking-wider text-sky-400">
+            shadcn for 3D &amp; motion
+          </p>
+          <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-white sm:text-5xl">
+            Production-safe 3D &amp; motion components your AI agent can install.
+          </h1>
+          <p className="mt-5 max-w-2xl text-lg text-slate-200">
+            Every component is certified leak-free, SSR-safe, and
+            performance-budgeted by our vetting harness — then injected into your
+            Next.js app with AST-safe edits via the CLI or MCP server.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <div className="inline-flex items-center gap-3 rounded-lg border border-white/20 bg-slate-900/60 px-4 py-3 font-mono text-sm text-slate-200 backdrop-blur-sm">
+              <span className="text-slate-500">$</span>
+              npx animai add hero-orbital-rig
+            </div>
+            <Link
+              href="/playground"
+              className="inline-flex items-center gap-2 rounded-lg border border-sky-400/40 bg-sky-500/20 px-4 py-3 text-sm font-medium text-sky-200 backdrop-blur-sm hover:bg-sky-500/30"
+            >
+              Try the live MCP playground →
+            </Link>
           </div>
-          <Link
-            href="/playground"
-            className="inline-flex items-center gap-2 rounded-lg border border-sky-500/40 bg-sky-500/10 px-4 py-3 text-sm font-medium text-sky-300 hover:bg-sky-500/20"
-          >
-            Try the live MCP playground →
-          </Link>
         </div>
       </section>
 
