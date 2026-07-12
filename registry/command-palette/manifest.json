@@ -1,0 +1,46 @@
+{
+  "template_id": "command-palette",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "navigation",
+  "title": "Command Palette",
+  "summary": "A ⌘K-triggered command palette with fuzzy filtering and full keyboard navigation.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "CommandPalette.tsx",
+  "loader_filename": "CommandPaletteSlot.tsx",
+  "loader_export": "CommandPaletteSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/CommandPalette.tsx.",
+    "Write loader_code to app/components/CommandPaletteSlot.tsx.",
+    "Import CommandPaletteSlot into the route where the component should appear.",
+    "Render <CommandPaletteSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/command-palette",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-12T09:18:06.218Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "command",
+    "palette",
+    "search",
+    "keyboard",
+    "shortcut"
+  ]
+}

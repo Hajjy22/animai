@@ -1,0 +1,45 @@
+{
+  "template_id": "dropdown-menu",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "navigation",
+  "title": "Dropdown Menu",
+  "summary": "A keyboard-navigable dropdown menu with arrow keys, Home/End, type-ahead, and outside-click dismissal.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "DropdownMenu.tsx",
+  "loader_filename": "DropdownMenuSlot.tsx",
+  "loader_export": "DropdownMenuSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/DropdownMenu.tsx.",
+    "Write loader_code to app/components/DropdownMenuSlot.tsx.",
+    "Import DropdownMenuSlot into the route where the component should appear.",
+    "Render <DropdownMenuSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/dropdown-menu",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-12T09:18:06.221Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "dropdown",
+    "menu",
+    "navigation",
+    "keyboard"
+  ]
+}

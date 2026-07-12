@@ -1,0 +1,44 @@
+{
+  "template_id": "breadcrumbs",
+  "version": "1.0.0",
+  "tier": "free",
+  "category": "navigation",
+  "title": "Breadcrumbs",
+  "summary": "Accessible breadcrumb navigation with a current-page indicator and truncation on small screens.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "Breadcrumbs.tsx",
+  "loader_filename": "BreadcrumbsSlot.tsx",
+  "loader_export": "BreadcrumbsSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/Breadcrumbs.tsx.",
+    "Write loader_code to app/components/BreadcrumbsSlot.tsx.",
+    "Import BreadcrumbsSlot into the route where the component should appear.",
+    "Render <BreadcrumbsSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/breadcrumbs",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-12T09:18:06.216Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "breadcrumbs",
+    "navigation",
+    "wayfinding"
+  ]
+}

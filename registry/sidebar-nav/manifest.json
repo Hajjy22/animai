@@ -1,0 +1,45 @@
+{
+  "template_id": "sidebar-nav",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "navigation",
+  "title": "Sidebar Navigation",
+  "summary": "A collapsible sidebar nav with active-item indicator, icons, and smooth width transition.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "SidebarNav.tsx",
+  "loader_filename": "SidebarNavSlot.tsx",
+  "loader_export": "SidebarNavSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/SidebarNav.tsx.",
+    "Write loader_code to app/components/SidebarNavSlot.tsx.",
+    "Import SidebarNavSlot into the route where the component should appear.",
+    "Render <SidebarNavSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/sidebar-nav",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-12T09:18:06.251Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "sidebar",
+    "navigation",
+    "menu",
+    "collapse"
+  ]
+}
