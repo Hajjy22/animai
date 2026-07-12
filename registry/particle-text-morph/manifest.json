@@ -1,0 +1,52 @@
+{
+  "template_id": "particle-text-morph",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "showcase",
+  "title": "Particle Text Morph",
+  "summary": "A headline drawn as thousands of particles that dissolve and reassemble into the next word — curl-noise scatter mid-flight, pointer repulsion, zero assets.",
+  "framework": "nextjs-r3f",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "ParticleTextMorph.tsx",
+  "loader_filename": "ParticleTextMorphSlot.tsx",
+  "loader_export": "ParticleTextMorphSlot",
+  "dependencies": [
+    "three",
+    "@react-three/fiber"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "three": ">=0.160.0",
+    "@react-three/fiber": ">=8.15.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/ParticleTextMorph.tsx.",
+    "Write loader_code to app/components/ParticleTextMorphSlot.tsx.",
+    "Import ParticleTextMorphSlot into the route where the component should appear.",
+    "Render <ParticleTextMorphSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/particle-text-morph",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "n/a",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-12T09:43:56.172Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "signature",
+    "text",
+    "particles",
+    "morph",
+    "webgl",
+    "typography"
+  ]
+}

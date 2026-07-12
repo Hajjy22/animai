@@ -1,0 +1,46 @@
+{
+  "template_id": "split-flap-board",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "showcase",
+  "title": "Split-Flap Board",
+  "summary": "An airport departure-board display: characters flip through the alphabet with staggered 3D flaps until the message lands.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "SplitFlapBoard.tsx",
+  "loader_filename": "SplitFlapBoardSlot.tsx",
+  "loader_export": "SplitFlapBoardSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/SplitFlapBoard.tsx.",
+    "Write loader_code to app/components/SplitFlapBoardSlot.tsx.",
+    "Import SplitFlapBoardSlot into the route where the component should appear.",
+    "Render <SplitFlapBoardSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/split-flap-board",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "n/a",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-12T09:43:56.188Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "signature",
+    "text",
+    "split-flap",
+    "retro",
+    "typography"
+  ]
+}
