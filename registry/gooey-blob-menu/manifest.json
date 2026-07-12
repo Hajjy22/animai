@@ -1,0 +1,47 @@
+{
+  "template_id": "gooey-blob-menu",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "showcase",
+  "title": "Gooey Blob Menu",
+  "summary": "A metaball action menu: blobs merge and split with an SVG gooey filter as items spring from the launcher.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "GooeyBlobMenu.tsx",
+  "loader_filename": "GooeyBlobMenuSlot.tsx",
+  "loader_export": "GooeyBlobMenuSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/GooeyBlobMenu.tsx.",
+    "Write loader_code to app/components/GooeyBlobMenuSlot.tsx.",
+    "Import GooeyBlobMenuSlot into the route where the component should appear.",
+    "Render <GooeyBlobMenuSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/gooey-blob-menu",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "n/a",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-12T09:56:50.859Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "signature",
+    "menu",
+    "gooey",
+    "metaball",
+    "svg",
+    "fab"
+  ]
+}

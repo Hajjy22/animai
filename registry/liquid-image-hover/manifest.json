@@ -1,0 +1,52 @@
+{
+  "template_id": "liquid-image-hover",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "showcase",
+  "title": "Liquid Image Hover",
+  "summary": "An image that ripples and liquefies under the cursor — single-pass shader displacement, procedural demo texture, zero assets.",
+  "framework": "nextjs-r3f",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "LiquidImageHover.tsx",
+  "loader_filename": "LiquidImageHoverSlot.tsx",
+  "loader_export": "LiquidImageHoverSlot",
+  "dependencies": [
+    "three",
+    "@react-three/fiber"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "three": ">=0.160.0",
+    "@react-three/fiber": ">=8.15.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/LiquidImageHover.tsx.",
+    "Write loader_code to app/components/LiquidImageHoverSlot.tsx.",
+    "Import LiquidImageHoverSlot into the route where the component should appear.",
+    "Render <LiquidImageHoverSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/liquid-image-hover",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "n/a",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-12T09:56:50.869Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "signature",
+    "image",
+    "liquid",
+    "hover",
+    "webgl",
+    "distortion"
+  ]
+}
