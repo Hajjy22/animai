@@ -1,0 +1,45 @@
+{
+  "template_id": "toast-stack",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "overlays",
+  "title": "Toast Stack",
+  "summary": "Stacked toast notifications with auto-dismiss, manual close, and staggered enter/exit motion.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "ToastStack.tsx",
+  "loader_filename": "ToastStackSlot.tsx",
+  "loader_export": "ToastStackSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/ToastStack.tsx.",
+    "Write loader_code to app/components/ToastStackSlot.tsx.",
+    "Import ToastStackSlot into the route where the component should appear.",
+    "Render <ToastStackSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/toast-stack",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T21:34:26.154Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "toast",
+    "notification",
+    "overlay",
+    "stack"
+  ]
+}

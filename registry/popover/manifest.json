@@ -1,0 +1,45 @@
+{
+  "template_id": "popover",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "overlays",
+  "title": "Popover",
+  "summary": "A click-triggered popover anchored to its trigger, with outside-click dismissal and a subtle pop animation.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "Popover.tsx",
+  "loader_filename": "PopoverSlot.tsx",
+  "loader_export": "PopoverSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/Popover.tsx.",
+    "Write loader_code to app/components/PopoverSlot.tsx.",
+    "Import PopoverSlot into the route where the component should appear.",
+    "Render <PopoverSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/popover",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T21:34:26.134Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "popover",
+    "overlay",
+    "menu",
+    "anchored"
+  ]
+}

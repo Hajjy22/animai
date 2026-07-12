@@ -1,0 +1,46 @@
+{
+  "template_id": "modal-dialog",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "overlays",
+  "title": "Modal Dialog",
+  "summary": "An accessible modal with focus trapping, ESC to close, backdrop click, and a smooth scale-in — built on the native <dialog> semantics.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "ModalDialog.tsx",
+  "loader_filename": "ModalDialogSlot.tsx",
+  "loader_export": "ModalDialogSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/ModalDialog.tsx.",
+    "Write loader_code to app/components/ModalDialogSlot.tsx.",
+    "Import ModalDialogSlot into the route where the component should appear.",
+    "Render <ModalDialogSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/modal-dialog",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T21:34:26.129Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "modal",
+    "dialog",
+    "overlay",
+    "focus-trap",
+    "a11y"
+  ]
+}

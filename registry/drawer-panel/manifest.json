@@ -1,0 +1,46 @@
+{
+  "template_id": "drawer-panel",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "overlays",
+  "title": "Drawer Panel",
+  "summary": "A slide-in side sheet with backdrop, ESC to close, and reduced-motion fallback — great for filters, carts, and settings.",
+  "framework": "nextjs-css",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "DrawerPanel.tsx",
+  "loader_filename": "DrawerPanelSlot.tsx",
+  "loader_export": "DrawerPanelSlot",
+  "dependencies": [],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/DrawerPanel.tsx.",
+    "Write loader_code to app/components/DrawerPanelSlot.tsx.",
+    "Import DrawerPanelSlot into the route where the component should appear.",
+    "Render <DrawerPanelSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/drawer-panel",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "pass",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-11T21:34:26.117Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "drawer",
+    "panel",
+    "sheet",
+    "overlay",
+    "slide"
+  ]
+}
