@@ -4,8 +4,9 @@ Status legend: [x] done · [ ] pending · [~] blocked on your account access
 
 ## Pre-launch
 
-- [x] `npm run vet:check` — all 30 components pass (18 free / 12 pro)
-- [x] `npm test` — 43 tests green
+- [x] `npm run vet:check` — all 56 components pass (28 free / 28 pro), incl. the
+      9-piece Signature Collection and the accessibility tier on everyday UI
+- [x] `npm test` — 47 tests green
 - [x] `cd web && npm run build` — production build clean
 - [x] Pricing page live at `/pricing`
 - [ ] Waitlist form created (Tally) and linked from `/pricing` CTA
@@ -91,7 +92,7 @@ Submit to all directories to maximize AI-agent discovery:
 1. "Just shipped AnimAI — an open-source registry of vetted 3D & motion components that your AI coding agent (Cursor, Claude Code, Windsurf) can install in one command."
 2. "Every component is certified leak-free, SSR-safe, and performance-budgeted by a static+runtime vetting harness. No more GPU memory leaks in production."
 3. "The MCP server gives AI agents two tools: search the library and inject components with AST-safe edits. Zero manual copy-paste."
-4. "Free tier: 18 components, CLI, MCP. Pro: $59/yr founding price for all 30. Try it: `npx animai add aurora-hero`"
+4. "Free tier: 28 components, CLI, MCP. Pro: $59/yr founding price for all 56 — including the Signature Collection (particle text morph, liquid image hover, exploded-view scroll). Try it: `npx animai add aurora-hero`"
 
 ## Kill criteria (30 days post-launch)
 

@@ -1,0 +1,53 @@
+{
+  "template_id": "infinite-shader-carousel",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "showcase",
+  "title": "Infinite Shader Carousel",
+  "summary": "A horizontally infinite image carousel with velocity-based shader distortion — planes bend and stretch on fast drag.",
+  "framework": "nextjs-r3f",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "InfiniteShaderCarousel.tsx",
+  "loader_filename": "InfiniteShaderCarouselSlot.tsx",
+  "loader_export": "InfiniteShaderCarouselSlot",
+  "dependencies": [
+    "three",
+    "@react-three/fiber"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "three": ">=0.160.0",
+    "@react-three/fiber": ">=8.15.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/InfiniteShaderCarousel.tsx.",
+    "Write loader_code to app/components/InfiniteShaderCarouselSlot.tsx.",
+    "Import InfiniteShaderCarouselSlot into the route where the component should appear.",
+    "Render <InfiniteShaderCarouselSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/infinite-shader-carousel",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "n/a",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-16T11:01:11.961Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "3d",
+    "carousel",
+    "shader",
+    "drag",
+    "infinite",
+    "webgl",
+    "signature"
+  ]
+}

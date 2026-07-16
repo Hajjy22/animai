@@ -1,17 +1,17 @@
 {
-  "template_id": "scroll-driven-3d-model",
+  "template_id": "exploded-view-scroll",
   "version": "1.0.0",
   "tier": "pro",
   "category": "showcase",
-  "title": "Scroll-Driven 3D Model",
-  "summary": "A 3D model whose rotation and position are tied to scroll progress, Apple-style product reveal.",
+  "title": "Exploded View Scroll",
+  "summary": "A product built from primitives whose parts separate into an exploded view as you scroll, then reassemble — the keynote reveal move.",
   "framework": "nextjs-r3f",
   "framework_targets": [
     "nextjs-app-router"
   ],
-  "component_filename": "ScrollDriven3dModel.tsx",
-  "loader_filename": "ScrollDriven3dModelSlot.tsx",
-  "loader_export": "ScrollDriven3dModelSlot",
+  "component_filename": "ExplodedViewScroll.tsx",
+  "loader_filename": "ExplodedViewScrollSlot.tsx",
+  "loader_export": "ExplodedViewScrollSlot",
   "dependencies": [
     "three",
     "@react-three/fiber",
@@ -27,13 +27,13 @@
     "@gsap/react": ">=2.1.0"
   },
   "integration_instructions": [
-    "Write the returned target_code to app/components/ScrollDriven3dModel.tsx.",
-    "Write loader_code to app/components/ScrollDriven3dModelSlot.tsx.",
-    "Import ScrollDriven3dModelSlot into the route where the component should appear.",
-    "Render <ScrollDriven3dModelSlot /> inside the page body.",
+    "Write the returned target_code to app/components/ExplodedViewScroll.tsx.",
+    "Write loader_code to app/components/ExplodedViewScrollSlot.tsx.",
+    "Import ExplodedViewScrollSlot into the route where the component should appear.",
+    "Render <ExplodedViewScrollSlot /> inside the page body.",
     "Install peer dependencies before running the dev server."
   ],
-  "preview_url": "https://animai.dev/preview/scroll-driven-3d-model",
+  "preview_url": "https://animai.dev/preview/exploded-view-scroll",
   "vetting_report": {
     "dispose_audit": "pass",
     "ssr_safe": true,
@@ -42,15 +42,16 @@
     "fps_budget": 60,
     "measured_fps": null,
     "method": "static",
-    "verified_at": "2026-07-16T11:01:12.067Z",
+    "verified_at": "2026-07-16T11:01:11.920Z",
     "harness_version": "0.1.0"
   },
   "tags": [
     "3d",
+    "exploded",
     "scroll",
     "scrolltrigger",
     "product",
     "webgl",
-    "reveal"
+    "signature"
   ]
 }

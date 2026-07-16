@@ -1,0 +1,53 @@
+{
+  "template_id": "device-showcase-3d",
+  "version": "1.0.0",
+  "tier": "pro",
+  "category": "showcase",
+  "title": "Device Showcase 3D",
+  "summary": "A laptop built from primitives with a procedural screen texture, idle float, and drag-to-rotate — drop in your own screenshot via prop.",
+  "framework": "nextjs-r3f",
+  "framework_targets": [
+    "nextjs-app-router"
+  ],
+  "component_filename": "DeviceShowcase3d.tsx",
+  "loader_filename": "DeviceShowcase3dSlot.tsx",
+  "loader_export": "DeviceShowcase3dSlot",
+  "dependencies": [
+    "three",
+    "@react-three/fiber"
+  ],
+  "peer_dep_ranges": {
+    "react": ">=18.2.0",
+    "next": ">=14.0.0",
+    "three": ">=0.160.0",
+    "@react-three/fiber": ">=8.15.0"
+  },
+  "integration_instructions": [
+    "Write the returned target_code to app/components/DeviceShowcase3d.tsx.",
+    "Write loader_code to app/components/DeviceShowcase3dSlot.tsx.",
+    "Import DeviceShowcase3dSlot into the route where the component should appear.",
+    "Render <DeviceShowcase3dSlot /> inside the page body.",
+    "Install peer dependencies before running the dev server."
+  ],
+  "preview_url": "https://animai.dev/preview/device-showcase-3d",
+  "vetting_report": {
+    "dispose_audit": "pass",
+    "ssr_safe": true,
+    "vram_leak": false,
+    "a11y": "n/a",
+    "fps_budget": 60,
+    "measured_fps": null,
+    "method": "static",
+    "verified_at": "2026-07-16T11:01:11.901Z",
+    "harness_version": "0.1.0"
+  },
+  "tags": [
+    "3d",
+    "device",
+    "laptop",
+    "showcase",
+    "product",
+    "webgl",
+    "signature"
+  ]
+}
